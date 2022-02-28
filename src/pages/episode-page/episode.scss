@@ -1,0 +1,17 @@
+.episode-page {
+	padding: 50px 150px;
+}
+
+.episode-page__content-wrapper {
+	width: 1200px;
+}
+
+.episode-page__content-list {
+	display: grid;
+	grid-template-columns: 23% 23% 23% 23%;
+	justify-content: space-between;
+	row-gap: 50px;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}

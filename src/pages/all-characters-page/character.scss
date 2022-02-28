@@ -1,0 +1,27 @@
+.character-page {
+	padding: 50px 150px;
+}
+
+.character-page__content-wrapper {
+	width: 1200px;
+}
+
+.hidden {
+	display: none;
+}
+
+.pagination {
+	display: flex;
+}
+
+.pagination-item {
+	display: block;
+	min-width: 20px;
+	text-decoration: none;
+	color: #000000;
+}
+
+.pagination-item__current {
+	color: #e4a788;
+	text-decoration: underline;
+}
