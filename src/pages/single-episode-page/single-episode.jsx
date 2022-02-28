@@ -1,12 +1,12 @@
 import React from 'react';
-import './episode.scss';
+import './single-episode.scss';
 import { PageTitle } from '../../components/page-title/page-title.jsx';
 import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
 import { selectUniqItems } from '../../utils/uniqItems';
 import { CharacterItem } from '../../components/character-item/characterItem';
 
-function EpisodePage() {
+function SingleEpisode() {
 	const episodes = useSelector(store => store.episodes);
 	const characters = useSelector(store => store.characters);
 	const { id } = useParams();
@@ -64,4 +64,4 @@ function EpisodePage() {
 	);
 }
 
-export { EpisodePage };
+export { SingleEpisode };

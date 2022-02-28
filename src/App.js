@@ -1,16 +1,16 @@
 import './App.scss';
 import React, { useEffect } from 'react';
-import { Locations } from './pages/locations/locations.jsx';
+import { AllLocationsPage } from './pages/all-locations-page/all-locations.jsx';
 import { Main } from './pages/main/main.jsx';
-import { EpisodePage } from './pages/episode-page/episode.jsx';
-import { CharacterPage } from './pages/character-page/character.jsx';
+import { SingleEpisode } from './pages/single-episode-page/single-episode.jsx';
+import { SingleCharacter } from './pages/single-character-page/single-character.jsx';
 import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/header/header.jsx';
 import { Footer } from './components/footer/footer.jsx';
 import { fetchData } from './data/fetchData.js';
 import { setEpisodesAction, setCharactersAction, setLocationsAction } from './redux/actions/index.js';
 import { useDispatch } from 'react-redux';
-import { Characters } from './pages/all-characters-page/character';
+import { AllCharactersPage } from './pages/all-characters-page/all-character';
 
 function App() {
 	const dispatch = useDispatch();
@@ -66,6 +66,7 @@ function App() {
 			});
 	}
 
+	//Dispatching data from server to redux store
 	useEffect(() => {
 		dispatchFetchedEpisodes('https://rickandmortyapi.com/api/episode?page=1');
 		dispatchFetchedCharacters('https://rickandmortyapi.com/api/character?page=1');
@@ -77,10 +78,10 @@ function App() {
 			<Header />
 			<Routes>
 				<Route path="/" element={<Main />} />
-				<Route path="/episode/:id" element={<EpisodePage />} />
-				<Route path="/characters" element={<Characters />} />
-				<Route path="/characters/:id" element={<CharacterPage />} />
-				<Route path="/locations" element={<Locations />} />
+				<Route path="/episode/:id" element={<SingleEpisode />} />
+				<Route path="/characters" element={<AllCharactersPage />} />
+				<Route path="/characters/:id" element={<SingleCharacter />} />
+				<Route path="/locations" element={<AllLocationsPage />} />
 			</Routes>
 			<Footer />
 		</div>
