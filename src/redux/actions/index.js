@@ -19,4 +19,11 @@ function setCharactersAction(newState) {
 	};
 }
 
-export { setEpisodesAction, setCharactersAction, setLocationsAction };
+function setFilteredAction(newState) {
+	return {
+		type: 'setFilteredEpisodes',
+		payload: newState
+	};
+}
+
+export { setEpisodesAction, setCharactersAction, setLocationsAction, setFilteredAction };
