@@ -61,7 +61,7 @@ function Main() {
 
 	function serachHandler() {
 		const filteredItems = state.data.filter(item => {
-			return item.name.includes(document.getElementById('search').value);
+			return item.name.toLowerCase().includes(document.getElementById('search').value.toLowerCase());
 		});
 		dispatch(setFilteredAction(filteredItems));
 	}
